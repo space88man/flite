@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+%:
+	dh $@  --with autotools-dev
+
+override_dh_auto_clean:
+	echo "Why would a package ever have the make target 'distclean' call ./configure?"
+
+override_dh_auto_test:
+	echo "Disable the tests target since flite doesn't have one"
+
+override_dh_auto_configure:
+	dh_auto_configure -- --enable-shared --with-audio=none
+
+
+
