@@ -78,7 +78,7 @@ LOCAL_CLEAN = $(BINDIR)/flite$(EXEEXT) $(BINDIR)/flite_time$(EXEEXT) \
               flite_voice_list.c
 
 ifdef SHFLAGS
-flite_LIBS_flags += -Wl,-rpath $(LIBDIR) 
+# flite_LIBS_flags += -Wl,-rpath $(LIBDIR)
 shared_libs: $(SHAREDLIBS)
 else
 shared_libs: nothing
