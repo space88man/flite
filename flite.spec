@@ -89,6 +89,9 @@ rm -rf %{buildroot}
 %{_libdir}/pkgconfig/flite.pc
 
 %changelog
+* Sat Nov 30 2024 S-P Chan <shihping.chan@gmail.com> 2.0.0-3
+- new package built with tito
+
 * Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.3-23
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
