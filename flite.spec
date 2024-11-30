@@ -1,13 +1,13 @@
 Name:           flite
 Version:        2.0.0
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        Small, fast speech synthesis engine (text-to-speech)
 
 Group:          Applications/Multimedia
 License:        MIT
 URL:            http://www.speech.cs.cmu.edu/flite/
 Source0:        http://www.speech.cs.cmu.edu/flite/packed/%{name}-%{version}/%{name}-%{version}.tar.gz
-Patch4:         0001-auserver.c-Only-write-audio-data-to-a-file-in-debug-.patch
+# Patch4:         0001-auserver.c-Only-write-audio-data-to-a-file-in-debug-.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %if 0%{?el4}
@@ -15,7 +15,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 %else
 BuildRequires:  texi2html
 %endif
-BuildRequires:  ed alsa-lib-devel autoconf
+BuildRequires:  ed alsa-lib-devel autoconf gcc
 
 
 %description
@@ -37,7 +37,7 @@ Development files for Flite, a small, fast speech synthesis engine.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch4 -p1
+#%patch4 -p1
 
 
 %build
